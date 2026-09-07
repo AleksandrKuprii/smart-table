@@ -71,7 +71,7 @@ const applyPagination = initPagination(
     }
 ); 
 
-const applySearching = initSearching (search);
+const applySearching = initSearching ('search');
 
 const applyFiltering = initFiltering(sampleTable.filter.elements, {   
     searchBySeller: indexes.sellers                                    
