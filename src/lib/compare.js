@@ -61,7 +61,7 @@ const rules = {
         if (Array.isArray(targetValue)) {
             if (targetValue.length === 2) {
                 const [from, to] = targetValue;
-
+                
                 if (!isEmpty(from) && sourceValue < from) {
                     return { result: false };
                 }
