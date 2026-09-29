@@ -14,7 +14,15 @@ export function initFiltering(elements) {
 
   const applyFiltering = (query, state, action) => {
     // код с обработкой очистки поля
-
+    if (action) {
+      if (action.dataset.field === "customer" && action.name === "clear") {
+        action.parentElement.querySelector("input").value = "";
+        state[action.dataset.field] = "";
+      } else if (action.dataset.field === "date" && action.name === "clear") {
+        action.parentElement.querySelector("input").value = "";
+        state[action.dataset.field] = "";
+      }
+    }
     // @todo: #4.5 — отфильтровать данные, используя компаратор
     const filter = {};
     Object.keys(elements).forEach((key) => {
@@ -60,15 +68,7 @@ export function initFiltering(elements) {
 //     return (data, state, action) => {
 //         // @todo: #4.2 — обработать очистку поля
 
-//         if (action) {
-//             if (action.dataset.field === 'customer' && action.name ==='clear'){
-//                 action.parentElement.querySelector("input").value = '';
-//                 state[action.dataset.field] = '';
-//             } else if (action.dataset.field === 'date' && action.name ==='clear') {
-//                 action.parentElement.querySelector("input").value = '';
-//                 state[action.dataset.field] = '';
-//             }
-//         }
+//
 
 //         const filterState = {...state, total: [state.totalFrom, state.totalTo]}
 //         // @todo: #4.5 — отфильтровать данные используя компаратор
